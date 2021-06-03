@@ -1,0 +1,88 @@
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.图像处理.resources
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+D:\用户目录\Documents\Visual Studio 2010\Projects\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+G:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+G:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+G:\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+G:\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+G:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csprojResolveAssemblyReference.cache
+G:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.图像处理.resources
+G:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+G:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csproj.GenerateResource.Cache
+I:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+I:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+I:\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+I:\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+I:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csprojResolveAssemblyReference.cache
+I:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.图像处理.resources
+I:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+I:\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csproj.GenerateResource.Cache
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csprojResolveAssemblyReference.cache
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.图像处理.resources
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csproj.GenerateResource.Cache
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.FormCut.resources
+C:\Users\Evoler\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.GammaForm.resources
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csprojResolveAssemblyReference.cache
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.图像处理.resources
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.FormCut.resources
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.GammaForm.resources
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+C:\Users\admin3\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.图像处理.resources
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.FormCut.resources
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.GammaForm.resources
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrator\Desktop\ImageProcess\ImageProcess\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+E:\wr-20125601\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+E:\wr-20125601\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.图像处理.resources
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.FormCut.resources
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.GammaForm.resources
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\wr-20125601\ImageProcess\ImageProcess\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csprojResolveAssemblyReference.cache
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.FormCut.resources
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.GammaForm.resources
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csproj.GenerateResource.Cache
+E:\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.PictureProcessing.resources
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.exe
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.pdb
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\bin\Debug\ImageProcess.exe
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\bin\Debug\ImageProcess.pdb
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csprojResolveAssemblyReference.cache
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.PictureProcessing.resources
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.FormCut.resources
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.GammaForm.resources
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.Properties.Resources.resources
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.csproj.GenerateResource.Cache
+E:\VisualStudioWorkSpace\VisualStudioWorkSpace\ImageProcess\ImageProcess\obj\x86\Debug\ImageProcess.FormChange.resources
