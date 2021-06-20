@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AttackEnemy" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAACAAAAAA=</HashCode>
+      <FileName>GObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BeanMan" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAgAAAAAAgAAAAIgAAgAAAAAAAABAAAAAAAAAQQ=</HashCode>
+      <FileName>GObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DefendEnemy" Collapsed="true">
+    <Position X="2.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>GObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgACAAAAAgAAAAAAAAAAAAAAAAAAAAAAiAAAAgQ=</HashCode>
+      <FileName>GObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GObject" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQQAAAAAoAACgAggACgAKAAEAAEIwAAABAAAAAAAAQ=</HashCode>
+      <FileName>GObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RandEnemy" Collapsed="true">
+    <Position X="1.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAABAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>GObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GMap" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAECAAAAAAAAASAAAEAAAAAgAABAABAgA=</HashCode>
+      <FileName>GMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="stage_1" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>GMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="stage_2" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>GMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="stage_3" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>GMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
