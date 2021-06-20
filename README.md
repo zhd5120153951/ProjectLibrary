@@ -3,8 +3,8 @@
 项目语言以C/C++/C#/Python为主.
 具体的项目介绍以及使用流程后续有空再说明.
 欢迎关注,拉取,留言.
-CSDN博客网址:https://www.blog.csdn.net/zhd5120153951
-github地址: https://www.github.com/zhd5120153951
+CSDN博客网址:https://blog.csdn.net/zhd5120153951
+github地址: https://github.com/zhd5120153951
 第二次上传日期为:2021.6.3;本次记录下一git如何把不同的项目,上传到同一个远端仓库
 具体流程如下:
 ①在本地仓库创建好项目,或者把原项目建成git版本控制的本地仓库.
