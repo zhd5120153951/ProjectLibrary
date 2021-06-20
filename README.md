@@ -16,3 +16,19 @@ github地址: https://github.com/zhd5120153951
 ⑦添加后,本地仓库已经更新了,这时可以把本地仓库内容提交到远端仓库;git commit -m "提交内容\信息\补充说明"
 ⑧最后一步了直接推送到远端:git push origin master
 备注:这只是master分支的,如果有了其他的分支,情况应该是一样的,只是分支有差别而已.
+
+补充内容:
+git 新建分支并修改\上传代码(新建分支可以自己在本地建立,也可以git pull拉取建立哦),具体步骤操作如下:
+
+①在本地新建分支git branch 新分支名
+②把本地新分支push到GitHub远端git push origin 新分支名
+③切换到新分支下git checkout 新分支名
+④(可选)查看新分支中的修改内容项(那些文件被修改了)git status
+⑤添加本地修改文件到暂缓区git add 文件夹名/文件名(或直接整个文件夹)
+⑥添加提交说明git commit -m "说明内容"
+⑦把新分支及修改内容push到GitHub远端去git push origin 新分支名
+⑧(可选)查看分子情况git branch
+⑨(可选)切换分支git checkout 分支名
+⑩(可选)拉取某个分支git  pull 分支名
+11、合并其他分支到主分支git merge 其他分支名（这里是把内容合并，相当于多人协作时，别人更改了代码，并上传了你合并后就可以看见他人更改的代码了。）
+12、push到主分支中 git push origin 主分支名（master）
