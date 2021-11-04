@@ -1,8 +1,0 @@
-====================================
-       ********ÉÌÆ·ÐÅÏ¢********       
-====================================
-ID:1	NAME:ÑÀ¸à	COST:12	VALUE:15	STOCK:-858993450
-ID:2	NAME:iPhone11	COST:5000	VALUE:5500	STOCK:-858993459
-ID:3	NAME:iPad2020	COST:4500	VALUE:4800	STOCK:-858993458
-ID:4	NAME:Ã«½í2020	COST:4500	VALUE:8800	STOCK:-858993472
-ID:5	NAME:Ç©×Ö±Ê	COST:10	VALUE:21	STOCK:-858993457
