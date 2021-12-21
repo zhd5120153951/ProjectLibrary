@@ -7,7 +7,7 @@ using namespace std;
 using namespace Gdiplus;
 /*!
  * \class: CGameEntry
- * \brief: 代表游戏中的所有对象,包括可移动的对象和不可以移动对象的抽象--抽象类
+ * \brief: 代表游戏中的所有对象的共性部分,包括可移动的对象和不可以移动对象的抽象--抽象类--天然的父类
  * \author: Daito
  * \date: 2021/06/24 16:30
  * \other:

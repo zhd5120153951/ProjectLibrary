@@ -1,5 +1,6 @@
 #pragma once
 #include "CGameEntry.h"
+#include "CBullet.h"
 #include <list>
 class CTankEntry :public CGameEntryMoveable
 {

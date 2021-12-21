@@ -2,6 +2,10 @@
 #include "pch.h"
 #include "CGameMenuPanel.h"    //①在游戏类中加入菜单和背景子类头文件
 #include "CGameMenuBackground.h"
+#include "CTankEntry.h" //游戏主体类对象需要调用坦克类对象(是其一部分也应该视为一个对象)来完成相关功能--这里充分体现着面向对象的思维方式
+//#include "CPlayer.h"
+//#include "CBullet.h"
+//#include "CBot.h"
 class CGame
 {
 public:

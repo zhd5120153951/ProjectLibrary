@@ -48,6 +48,33 @@
     <ClInclude Include="CTankEntry.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CBullet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CBot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameTimer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameMenuPanel2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameHit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CWall.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CGamePathFinder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tanker.cpp">
@@ -72,6 +99,33 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CTankEntry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CBot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameTimer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameMenuPanel2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameHit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CWall.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CGamePathFinder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
