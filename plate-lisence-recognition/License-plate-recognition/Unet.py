@@ -9,15 +9,15 @@ from tensorflow.keras import layers, losses, models
 def unet_train():
     height = 512
     width = 512
-    path = 'D:/desktop/unet_datasets/'
+    path = 'E:/ChromeDownload/unet_datasets/'
     input_name = os.listdir(path + 'train_image')
     n = len(input_name)
     print(n)
     X_train, y_train = [], []
     for i in range(n):
         print("正在读取第%d张图片" % i)
-        img = cv2.imread(path + 'train_image/%d.png' % i)
-        label = cv2.imread(path + 'train_label/%d.png' % i)
+        img = cv2.imread(path + 'train_image/%d.jpg' % i)
+        label = cv2.imread(path + 'train_label/%d.jpg' % i)#数据集缺少标签？
         X_train.append(img)
         y_train.append(label)
     X_train = np.array(X_train)
@@ -91,7 +91,7 @@ def unet_train():
     model.summary()
 
     print("开始训练u-net")
-    model.fit(X_train, y_train, epochs=100, batch_size=15)#epochs和batch_size看个人情况调整，batch_size不要过大，否则内存容易溢出
+    model.fit(X_train, y_train, epochs=100, batch_size=10)#epochs和batch_size看个人情况调整，batch_size不要过大，否则内存容易溢出
     #我11G显存也只能设置15-20左右，我训练最终loss降低至250左右，acc约95%左右
     model.save('unet.h5')
     print('unet.h5保存成功!!!')

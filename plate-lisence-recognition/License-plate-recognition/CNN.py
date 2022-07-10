@@ -16,7 +16,7 @@ def cnn_train():
                  "W": 61, "X": 62, "Y": 63, "Z": 64}
 
     # 读取数据集
-    path = 'home/cnn_datasets/'  # 车牌号数据集路径(车牌图片宽240，高80)
+    path = 'E:/ChromeDownloa/unet_datasets'  # 车牌号数据集路径(车牌图片宽240，高80)
     pic_name = sorted(os.listdir(path))
     n = len(pic_name)
     X_train, y_train = [], []
