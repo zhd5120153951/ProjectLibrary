@@ -50,8 +50,9 @@ class Window:
         self.button2.place(x=780, y=wh - 30)
         self.button3 = Button(self.win, text='清空所有', width=10, height=1, command=self.clear)  # 清空所有按钮
         self.button3.place(x=880, y=wh - 30)
-        self.unet = keras.models.load_model('unet.h5')
-        self.cnn = keras.models.load_model('cnn.h5')
+        # 这里的模型加载在windows下需要绝对路径
+        self.unet = keras.models.load_model('E:/GitLibrary/plate-lisence-recognition/License-plate-recognition/unet.h5')
+        self.cnn = keras.models.load_model('E:/GitLibrary/plate-lisence-recognition/License-plate-recognition/cnn.h5')
         print('正在启动中,请稍等...')
         cnn_predict(self.cnn, [np.zeros((80, 240, 3))])
         print("已启动,开始识别吧！")
