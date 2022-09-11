@@ -16,12 +16,12 @@ def cnn_train():
                  "W": 61, "X": 62, "Y": 63, "Z": 64}
 
     # 读取数据集
-    path = 'E:/ChromeDownloa/unet_datasets'  # 车牌号数据集路径(车牌图片宽240，高80)
+    path = 'E:/ChromeDownload/unet_datasets/'  # 车牌号数据集路径(车牌图片宽240，高80)
     pic_name = sorted(os.listdir(path))
     n = len(pic_name)
     X_train, y_train = [], []
     for i in range(n):
-        print("正在读取第%d张图片" % i)
+        #print("正在读取第%d张图片" % i)
         img = cv2.imdecode(np.fromfile(path + pic_name[i], dtype=np.uint8), -1)  # cv2.imshow无法读取中文路径图片，改用此方式
         label = [char_dict[name] for name in pic_name[i][0:7]]  # 图片名前7位为车牌标签
         X_train.append(img)
