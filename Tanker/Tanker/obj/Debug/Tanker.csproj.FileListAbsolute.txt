@@ -1,0 +1,11 @@
+E:\VS2022_Project\Tanker\Tanker\Tanker\bin\Debug\06-坦克大战-正式.exe.config
+E:\VS2022_Project\Tanker\Tanker\Tanker\bin\Debug\06-坦克大战-正式.exe
+E:\VS2022_Project\Tanker\Tanker\Tanker\bin\Debug\06-坦克大战-正式.pdb
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\Tanker.csproj.AssemblyReference.cache
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\Tanker.csproj.SuggestedBindingRedirects.cache
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\_06_坦克大战_正式.Form1.resources
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\_06_坦克大战_正式.Properties.Resources.resources
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\Tanker.csproj.GenerateResource.cache
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\Tanker.csproj.CoreCompileInputs.cache
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\06-坦克大战-正式.exe
+E:\VS2022_Project\Tanker\Tanker\Tanker\obj\Debug\06-坦克大战-正式.pdb
