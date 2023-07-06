@@ -1,0 +1,17 @@
+﻿  pch.cpp
+  CCursorHot.cpp
+  CKeyCode.cpp
+  CMFECToolTip.cpp
+E:\VS2022_Project\WeMFC\WeMFC\CMFECToolTip.cpp(18,12): warning C4244: “初始化”: 从“INT_PTR”转换到“int”，可能丢失数据
+E:\VS2022_Project\WeMFC\WeMFC\CMFECToolTip.cpp(76,12): warning C4244: “初始化”: 从“INT_PTR”转换到“int”，可能丢失数据
+E:\VS2022_Project\WeMFC\WeMFC\CMFECToolTip.cpp(102,12): warning C4244: “初始化”: 从“INT_PTR”转换到“int”，可能丢失数据
+E:\VS2022_Project\WeMFC\WeMFC\CMFECToolTip.cpp(195,12): warning C4244: “初始化”: 从“INT_PTR”转换到“int”，可能丢失数据
+E:\VS2022_Project\WeMFC\WeMFC\CMFECToolTip.cpp(213,12): warning C4244: “初始化”: 从“INT_PTR”转换到“int”，可能丢失数据
+  CMouseTip.cpp
+  CSimulateKeyInput.cpp
+  MainFrm.cpp
+  WeMFC.cpp
+  WeMFCDoc.cpp
+  WeMFCView.cpp
+  正在生成代码...
+  WeMFC.vcxproj -> E:\VS2022_Project\WeMFC\x64\Debug\WeMFC.exe
