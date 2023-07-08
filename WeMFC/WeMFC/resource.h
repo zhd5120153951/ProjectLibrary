@@ -26,13 +26,21 @@
 #define IDD_SHOW_KEYCODE                32772
 #define ID_CURSORHOT                    32773
 #define ID_MOUSE_TIP                    32774
+#define ID_32775                        32775
+#define ID_DoubleClickTitle             32776
+#define ID_ClickClose                   32777
+#define ID_32778                        32778
+#define ID_ORDER_1                      32779
+#define ID_ORDER_2                      32780
+#define ID_ORDER_3                      32781
+#define ID_ORDER_4                      32782
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        322
-#define _APS_NEXT_COMMAND_VALUE         32775
+#define _APS_NEXT_COMMAND_VALUE         32783
 #define _APS_NEXT_CONTROL_VALUE         1014
 #define _APS_NEXT_SYMED_VALUE           323
 #endif

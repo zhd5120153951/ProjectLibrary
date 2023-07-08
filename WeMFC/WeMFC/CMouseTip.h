@@ -31,5 +31,6 @@ protected:
 
 	afx_msg void OnAdd();
 	virtual BOOL OnInitDialog();
-	afx_msg void OnPaint();
+public:
+	afx_msg void OnExit();
 };

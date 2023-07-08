@@ -48,7 +48,7 @@ void CMFECToolTip::ErasePreviousToolTipDisplay(UINT nControlID)
 void CMFECToolTip::ShowToolTip(UINT nControlID)
 {
 	ToolTipInfo* pToolTip = IsControlIDExisting(nControlID);
-	if (!pToolTip)
+	if (pToolTip == NULL)
 	{
 		return;
 	}
@@ -134,12 +134,12 @@ void CMFECToolTip::CalculateInfoBoxRect(UINT nControlID, CRect* pInfoRect)
 
 	CWnd* pWnd = m_pParentWnd->GetDlgItem(nControlID);
 	ASSERT(pWnd);
-	pWnd->GetWindowRect(oRect);
+	pWnd->GetWindowRect(&oRect);
 	m_pParentWnd->ScreenToClient(&oRect);
 
 	//如果提示框合适--检查
 	SetFontSize(14);
-	int nButton = oRect.bottom - (oRect.bottom - oRect.top) / 2;
+	int nButton = oRect.bottom - ((oRect.bottom - oRect.top) / 2) + m_nHeight;
 	if (nButton <= oParentWindowRect.bottom)
 	{
 		pInfoRect->top = oRect.bottom - (oRect.bottom - oRect.top) / 2;
@@ -196,7 +196,7 @@ void CMFECToolTip::CalculateHeightAndWidth(CStringArray& straInfos)
 	m_nTotalLine = nLine; //提示消息的最大行
 	for (int i = 0; i < nLine; i++)
 	{
-		nLength = (straInfos[i].GetLength());
+		nLength = (straInfos[i]).GetLength();
 		if (nLength > nMaxLength)
 		{
 			nMaxLength = nLength;
@@ -240,7 +240,7 @@ void CMFECToolTip::DisplayInfo(ToolTipInfo* pToolTip)
 	CFont oFont, *pOldFont;
 	CWnd* pWnd = NULL;
 
-	pDC->SetBkColor(TRANSPARENT);
+	pDC->SetBkMode(TRANSPARENT);
 
 	oBrush.CreateSolidBrush(pToolTip->nBackColor);
 

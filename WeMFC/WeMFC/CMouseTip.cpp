@@ -43,7 +43,7 @@ BOOL CMouseTip::PreTranslateMessage(MSG* pMsg)
 
 BEGIN_MESSAGE_MAP(CMouseTip, CDialog)
 	ON_BN_CLICKED(IDC_BTN_ADD, &CMouseTip::OnAdd)
-	ON_WM_PAINT()
+	ON_BN_CLICKED(IDC_BTN_EXIT, &CMouseTip::OnExit)
 END_MESSAGE_MAP()
 
 
@@ -90,18 +90,9 @@ BOOL CMouseTip::OnInitDialog()
 }
 
 
-void CMouseTip::OnPaint()
+
+void CMouseTip::OnExit()
 {
-	CPaintDC dc(this); // device context for painting
-	// TODO: 在此处添加消息处理程序代码
-	// 不为绘图消息调用 CDialog::OnPaint()
-	if (IsIconic())
-	{
-		CPaintDC dc(this);
-		SendMessage(WM_ICONERASEBKGND, (WPARAM)dc.GetSafeHdc(), 0);
-	}
-	else
-	{
-		CDialog::OnPaint();
-	}
+	// TODO: 在此添加控件通知处理程序代码
+	CDialog::OnCancel();
 }

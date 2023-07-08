@@ -30,6 +30,9 @@ public:
 	DECLARE_MESSAGE_MAP()
 		afx_msg void OnSimulateInput();
 	afx_msg void OnShowKeycode();
+	afx_msg void OnMouseTip();
+	afx_msg void OnDoubleClickTitle();
+	afx_msg void OnClickClose();
 };
 
 extern CWeMFCApp theApp;

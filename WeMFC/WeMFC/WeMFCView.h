@@ -48,6 +48,7 @@ protected:
 	BOOL bShiftdown;
 	BOOL bShiftup;
 	BOOL bshiftB;
+	CRect oldRC;
 public:
 	CPoint ptCharacter;
 	afx_msg void OnSetFocus(CWnd* pOldWnd);
@@ -59,13 +60,19 @@ public:
 	CPoint ptDown;
 	//按键抬起位置
 	CPoint ptUp;
+	int m_radio;
+
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
 	afx_msg void OnRButtonDblClk(UINT nFlags, CPoint point);
 	afx_msg void OnCursorhot();
-	afx_msg void OnMouseTip();
+	afx_msg void OnMenuItemCommandRange(UINT nID);
+	afx_msg void OnUpdateMenuItemCommandRange(CCmdUI *pCCmdUI);
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	afx_msg void OnDestroy();
 };
 
 #ifndef _DEBUG  // WeMFCView.cpp 中的调试版本

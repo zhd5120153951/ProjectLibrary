@@ -10,6 +10,8 @@
 #include "MainFrm.h"
 #include "CSimulateKeyInput.h"
 #include "CKeyCode.h"
+#include "CMFECToolTip.h"
+#include "CMouseTip.h"
 
 #include "WeMFCDoc.h"
 #include "WeMFCView.h"
@@ -30,6 +32,9 @@ BEGIN_MESSAGE_MAP(CWeMFCApp, CWinApp)
 	ON_COMMAND(ID_FILE_PRINT_SETUP, &CWinApp::OnFilePrintSetup)
 	ON_COMMAND(ID_SIMULATE_INPUT, &CWeMFCApp::OnSimulateInput)
 	ON_COMMAND(ID_SHOW_KEYCODE, &CWeMFCApp::OnShowKeycode)
+	ON_COMMAND(ID_MOUSE_TIP, &CWeMFCApp::OnMouseTip)
+	ON_COMMAND(ID_DoubleClickTitle, &CWeMFCApp::OnDoubleClickTitle)
+	ON_COMMAND(ID_ClickClose, &CWeMFCApp::OnClickClose)
 END_MESSAGE_MAP()
 
 
@@ -197,4 +202,48 @@ void CWeMFCApp::OnShowKeycode()
 	// TODO: 在此添加命令处理程序代码
 	CKeyCode kc;
 	kc.DoModal();
+}
+
+
+void CWeMFCApp::OnMouseTip()
+{
+	// TODO: 在此添加命令处理程序代码
+	CMouseTip mt;
+	mt.DoModal();
+}
+
+
+void CWeMFCApp::OnDoubleClickTitle()
+{
+	// TODO: 在此添加命令处理程序代码
+	POINT lpPoint;
+	CRect rect;
+	CWnd* pParent = AfxGetApp()->GetMainWnd();//获取主窗口
+	pParent->GetWindowRect(&rect);
+	lpPoint.x = rect.left + 60;
+	lpPoint.y = rect.top + 10;
+	SetCursorPos(lpPoint.x, lpPoint.y);//将鼠标的位置移动到标题条上
+	Sleep(1000);
+	//双击标题条
+	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+}
+
+
+void CWeMFCApp::OnClickClose()
+{
+	// TODO: 在此添加命令处理程序代码
+	POINT lpPoint;
+	CRect rect;
+	CWnd* pParent = AfxGetApp()->GetMainWnd();//获取主窗口指针
+	pParent->GetWindowRect(&rect);
+	lpPoint.x = rect.right - 10;
+	lpPoint.y = rect.top + 5;
+	SetCursorPos(lpPoint.x, lpPoint.y);//将鼠标的位置移动到关闭按钮上
+	Sleep(1000);//等待1s
+	//单击关闭按钮
+	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 }

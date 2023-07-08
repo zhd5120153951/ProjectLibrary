@@ -36,7 +36,7 @@ protected:
 	int m_nTotalLine;
 	int m_maxCharInLine;
 
-	virtual void CalculateInfoBoxRect(UINT nControlID, CRect* pInfoRect);
+	virtual void CalculateInfoBoxRect(UINT nControlID, CRect *pInfoRect);
 	virtual void CalculateHeightAndWidth(CStringArray& straInfos);
 
 private:
