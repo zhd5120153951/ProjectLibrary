@@ -33,6 +33,8 @@ public:
 	afx_msg void OnMouseTip();
 	afx_msg void OnDoubleClickTitle();
 	afx_msg void OnClickClose();
+	afx_msg void OnBaseControl();
+	afx_msg void OnBmp();
 };
 
 extern CWeMFCApp theApp;

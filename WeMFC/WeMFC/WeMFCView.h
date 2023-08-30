@@ -61,6 +61,7 @@ public:
 	//按键抬起位置
 	CPoint ptUp;
 	int m_radio;
+	CString m_strTime;
 
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);

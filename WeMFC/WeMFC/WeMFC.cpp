@@ -12,6 +12,7 @@
 #include "CKeyCode.h"
 #include "CMFECToolTip.h"
 #include "CMouseTip.h"
+#include "CBitmapBtn.h"
 
 #include "WeMFCDoc.h"
 #include "WeMFCView.h"
@@ -35,6 +36,8 @@ BEGIN_MESSAGE_MAP(CWeMFCApp, CWinApp)
 	ON_COMMAND(ID_MOUSE_TIP, &CWeMFCApp::OnMouseTip)
 	ON_COMMAND(ID_DoubleClickTitle, &CWeMFCApp::OnDoubleClickTitle)
 	ON_COMMAND(ID_ClickClose, &CWeMFCApp::OnClickClose)
+	ON_COMMAND(ID_BASE_CONTROL, &CWeMFCApp::OnBaseControl)
+	ON_COMMAND(ID_BMP, &CWeMFCApp::OnBmp)
 END_MESSAGE_MAP()
 
 
@@ -246,4 +249,17 @@ void CWeMFCApp::OnClickClose()
 	//单击关闭按钮
 	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
 	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+}
+
+
+void CWeMFCApp::OnBaseControl()
+{
+	
+}
+
+
+void CWeMFCApp::OnBmp()
+{
+	CBitmapBtn bb;
+	bb.DoModal();
 }

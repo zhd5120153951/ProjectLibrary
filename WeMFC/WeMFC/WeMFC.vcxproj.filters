@@ -54,6 +54,9 @@
     <ClInclude Include="CMFECToolTip.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CBitmapBtn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WeMFC.cpp">
@@ -86,6 +89,9 @@
     <ClCompile Include="CMFECToolTip.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CBitmapBtn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WeMFC.rc">
@@ -111,6 +117,12 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\2.bmp">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

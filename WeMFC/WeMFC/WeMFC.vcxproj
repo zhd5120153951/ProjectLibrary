@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CBitmapBtn.h" />
     <ClInclude Include="CCursorHot.h" />
     <ClInclude Include="CKeyCode.h" />
     <ClInclude Include="CMFECToolTip.h" />
@@ -198,6 +199,7 @@
     <ClInclude Include="WeMFCView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CBitmapBtn.cpp" />
     <ClCompile Include="CCursorHot.cpp" />
     <ClCompile Include="CKeyCode.cpp" />
     <ClCompile Include="CMFECToolTip.cpp" />
@@ -223,6 +225,8 @@
     <None Include="res\WeMFC.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\1.bmp" />
+    <Image Include="res\2.bmp" />
     <Image Include="res\Toolbar.bmp" />
     <Image Include="res\WeMFC.ico" />
     <Image Include="res\WeMFCDoc.ico" />

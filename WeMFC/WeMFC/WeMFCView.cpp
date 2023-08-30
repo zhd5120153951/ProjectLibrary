@@ -1,7 +1,6 @@
 ﻿
 // WeMFCView.cpp: CWeMFCView 类的实现
 //
-
 #include "pch.h"
 #include "framework.h"
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
@@ -15,10 +14,14 @@
 #include "CCursorHot.h"
 #include "CMouseTip.h"
 
+
+#include <sys/timeb.h>
+#include <time.h>
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-
+#pragma warning( disable : 4996 )
 
 // CWeMFCView
 
@@ -388,6 +391,16 @@ void CWeMFCView::OnTimer(UINT_PTR nIDEvent)
 		CString str = m_time.Format("当前时间：%H:%M:%S");//格式化
 		dc.TextOut(100, 132, str);//显示时间
 		dc.SelectObject(oldfont);			//恢复设备环境中的旧字体
+		
+		struct _timeb timebuffer;
+		char* timeline;
+		//获取毫秒级时间
+		_ftime(&timebuffer);
+		timeline = ctime(&(timebuffer.time));
+		//格式化时间
+		m_strTime.Format("当前时间是：%.19s.%hu %s", timeline, timebuffer.millitm, &timeline[20]);
+		dc.TextOut(100, 178, m_strTime);
+		
 	}
 	CView::OnTimer(nIDEvent);
 }
