@@ -26,9 +26,6 @@
     <ClInclude Include="controlStyle.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="resource1.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resource\1.wav">

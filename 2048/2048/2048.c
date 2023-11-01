@@ -431,7 +431,7 @@ void NewNum(BOOL wantDraw)
 		};
 	if (j != 0)
 	{
-		srand(GetTickCount());
+		srand(GetTickCount64());
 		newnum_index = zero[rand() % j];
 		p += newnum_index;
 		if (wantDraw) FreshMainRect();//先刷新画面再出新块
