@@ -5,7 +5,7 @@ bool SQLInterface::Connect_MySQL()
 {
 	mysql_init(&mysqlCon);
 	//mysqlCon 数据库结构 localhost 主机名 root 用户名 "" 密码为空 mytest 数据库 3306 端口
-	if (!mysql_real_connect(&mysqlCon, "localhost", "root", "1234", "stuinfo", 3306, NULL, 0))
+	if (!mysql_real_connect(&mysqlCon, "localhost", "root", "@ZHDzhd2231", "stubase", 3306, NULL, 0))
 	{
 		AfxMessageBox(_T("访问数据库失败!"));
 		return false;
