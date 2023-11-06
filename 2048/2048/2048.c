@@ -13,14 +13,19 @@
 #include <tchar.h> 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <math.h>
 #include <CommCtrl.h>//定义控件样式(这是win系统的API函数的头文件)
 #include <mmsystem.h>//这是系统播放音乐函数的头文件
 #include "Resource.h"
 #include "resource.h"
 #include "controlStyle.h"
+
 #pragma comment(lib,"WINMM.LIB")   //播放音乐的预处理命令
 #pragma comment(lib,"comctl32.lib")//控件样式的预处理命令
-#pragma comment(lib,"Version.lib")
+#pragma comment(lib,"Version.lib") //版本读取预处理
+#pragma warning(disable:4996)//_CRT_SECURE_NO_WARNINGS
+
 
 const int width = 400;            //游戏主界面的宽高
 const int height = 600;
@@ -54,7 +59,7 @@ const int bottom_text_h = 25;    //界面底部高度
 
 int iblock;                      //块间隙
 
-const int round = 5;             //圆角半径
+const int Radis_c = 5;             //圆角半径
 
 int button_w;
 const int button_h = 20;
@@ -125,7 +130,7 @@ struct ReDo
 int cxScreen, cyScreen, cyCaption, cxSizeFrame, cySizeFrame;  //记录显示器/鼠标/按键的相关参数
 
 //字体
-const TCHAR FontName[] = TEXT("微软雅黑");//黑体---TEXT()函数把输入的汉字字符转换成字符串数组
+const TCHAR FontName[] = "微软雅黑";//黑体---TEXT()函数把输入的汉字字符转换成字符串数组
 
 //颜色-------颜色统一用RGB()函数,混合后得到对应的颜色
 const unsigned long crWhite = RGB(255, 255, 255);         //前景颜色--白色
@@ -145,6 +150,7 @@ const unsigned long cr256 = RGB(237,110,97);
 const unsigned long cr512 = RGB(246, 64, 64);
 const unsigned long cr1024 = RGB(237, 194, 97);
 const unsigned long cr2048 = RGB(237, 194, 46);
+
 
 //相关函数的声明
 unsigned long Num2Color(unsigned int num);   //获取颜色值
@@ -257,7 +263,7 @@ void myGetFileVersion(HINSTANCE hInst, TCHAR result[], TCHAR format[])
 			{
 				UINT valLen = MAX_PATH;
 				LPVOID valPtr = NULL;
-				if (VerQueryValue(lpInfo, TEXT("\\"), &valPtr, &valLen))
+				if (VerQueryValue(lpInfo, "\\", &valPtr, &valLen))
 				{
 					VS_FIXEDFILEINFO* pFinfo = (VS_FIXEDFILEINFO*)valPtr;
 					// convert to text
@@ -269,18 +275,35 @@ void myGetFileVersion(HINSTANCE hInst, TCHAR result[], TCHAR format[])
 	}
 }
 
+//log print -- 封装成类是最好的
+void saveLog(const char* logMessage) //C++直接用string
+{
+	SYSTEMTIME st;
+	GetLocalTime(&st);
+	FILE* file = fopen("log_2048.txt", "a");//a表示追加,w会覆盖
+	if (file != NULL) 
+	{
+		fprintf(file, "%02d:%02d:%02d\t%s\n",st.wHour,st.wMinute,st.wSecond,logMessage);
+		fclose(file);
+	}
+}
 //这是主函数入口(******重点解释:Windows程序---主函数入口为:WinMain()///控制台程序----主函数入口为:main()函数)
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
 {
+	saveLog("开始记录日志...");
+	// 使用特定的日志记录器记录日志消息
 	MSG msg;     //定义一个消息变量msg(这是一个消息结构体--用来接受用户与PC的交互信息)
-	WNDCLASS wndclass;//定义一个窗口变量wndclass(窗口结构体--用来刻划窗口的所有行为-比如:标识窗口/消息类型/消息的附加信息/窗口消息时间/鼠标位置)
-	static TCHAR szAppName[] = TEXT("2048");//TEXT不是函数而是声明2048为宽字符--一个字符16位
+	WNDCLASS wndclass;//定义一个窗口变量wndclass(窗口结构体--用来刻划窗口的所有行为.
+					  //比如:标识窗口/消息类型/消息的附加信息/窗口消息时间/鼠标位置)
+	//static TCHAR szAppName[] = TEXT("2048");//TEXT不是函数而是声明2048为宽字符--一个字符16位
+	static TCHAR szAppName[] = "2048";
 	static TCHAR szAppTitle[MAX_PATH];
 	hInst = hInstance;
 	//获得程序路径
 	GetModuleFileName(NULL, szFilePath, sizeof(szFilePath));
 	(_tcsrchr(szFilePath, _T('\\')))[1] = 0;
-	lstrcat(szFilePath, TEXT("2048.txt"));
+	lstrcat(szFilePath, "2048.txt");
+	saveLog(szFilePath);
 
 	//获得系统参数
 	cxScreen = GetSystemMetrics(SM_CXSCREEN);//显示器宽度
@@ -303,16 +326,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 
 	if (!RegisterClass(&wndclass))
 	{
-		MessageBox(NULL, TEXT("Fail to register WndClass registed."), szAppName, MB_ICONERROR);
+		MessageBox(NULL, "Fail to register WndClass registed.", szAppName, MB_ICONERROR);
+		saveLog("Fail to register WndClass registed...");
 		return 0;
 	}
 
-	wndclass.lpfnWndProc = ChildWndProc;
+	wndclass.lpfnWndProc = ChildWndProc;//子窗口的回调函数(win32就是--为每个窗口(包括子窗口)创建窗口注册类)
 	wndclass.cbWndExtra = sizeof(long);
 	wndclass.hIcon = NULL;
-	wndclass.lpszClassName = TEXT("szChildClass");
+	wndclass.lpszClassName = "szChildClass";
 
-	RegisterClass(&wndclass);
+	RegisterClass(&wndclass);//注册第二次
 
 	LoadString(hInst, IDS_STRING_APPTITLE, szAppTitle, sizeof(szAppTitle));
 	myGetFileVersion(hInst, szAppTitle, szAppTitle);
@@ -331,6 +355,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 	ShowWindow(hwnd, iCmdShow);
 	UpdateWindow(hwnd);
 
+	//循环捕获游戏界面的消息--并分发到对应的处理函数
 	while (GetMessage(&msg, NULL, 0, 0))
 	{
 		TranslateMessage(&msg);
@@ -341,7 +366,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 
 TCHAR * int2ptchar(unsigned int i)
 {
-	wsprintf(buffer_temp, TEXT("%d"), i);
+	wsprintf(buffer_temp, "%d", i);
 	return buffer_temp;
 }
 
@@ -400,7 +425,7 @@ void FreshMainRect()
 	hPen = CreatePen(PS_NULL, 0, 0);
 	SelectObject(hdc, hPen);//去掉画笔
 	//主矩形
-	RoundRect(hdc, rectMain.left, rectMain.top, rectMain.right, rectMain.bottom, round, round);
+	RoundRect(hdc, rectMain.left, rectMain.top, rectMain.right, rectMain.bottom, Radis_c, Radis_c);
 
 	for (i = 0; i < 4; i++)
 		for (j = 0; j < 4; j++)
@@ -446,13 +471,13 @@ BOOL AskStartNewGame()
 	TCHAR title[10];
 	if (isDead())
 	{
-		wsprintf(buffer, TEXT("没有可移动的块了。\n是否开始新游戏？\n（您还有%d次撤销机会）"), can_redo);
-		lstrcpy(title, TEXT("游戏结束"));
+		wsprintf(buffer, "没有可移动的块了。\n是否开始新游戏？\n（您还有%d次撤销机会）", can_redo);
+		lstrcpy(title, "游戏结束");
 	}
 	else
 	{
-		lstrcpy(buffer, TEXT("是否开始新游戏？"));
-		lstrcpy(title, TEXT("新游戏"));
+		lstrcpy(buffer, "是否开始新游戏？");
+		lstrcpy(title, "新游戏");
 	}
 	MessageBeep(0);
 	if (IDYES == MessageBox(hwnd, buffer, title, MB_YESNO | MB_ICONQUESTION))
@@ -497,12 +522,12 @@ BOOL JudgeFreshHighScore()//返回FALSE则是随机成绩
 {
 	if (step != step_after_random && step_after_random < RANDOM_STEP_THRESHOLD)//必须达到撤销存储步骤数才算玩家自己打的，否则名字为“随机”
 	{
-		FreshHighScore(TEXT("随机"));
+		FreshHighScore("随机");
 		return FALSE;
 	}
 	else
 	{
-		DialogBox(hInst, TEXT("IDD_DIALOGNAME"), hwnd, NameDlgProc);
+		DialogBox(hInst, "IDD_DIALOGNAME", hwnd, NameDlgProc);
 		return TRUE;
 	}
 }
@@ -611,11 +636,17 @@ void DrawTextAdvance(HDC hdc, TCHAR text[], RECT *rect, long FontSize, int FontW
 	DeleteObject(hf);
 }
 
+FILETIME ft_1, ft_2;
+ULARGE_INTEGER uli1, uli2;
+//long long diff_time;
+//#define cn 3 //连续多少次操作小于1秒,则额外加分
+int cn = 1;
+//主窗口的处理操作回调函数
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
 	{
-	case WM_CREATE:
+	case WM_CREATE://这个是系统消息--创建窗口
 	{
 		int i, j;
 		int dx, dy;
@@ -692,7 +723,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 			rectButton[i].left = border + i * button_s + i * button_w;//边距+间隙+按钮宽
 			rectButton[i].right = rectButton[i].left + button_w;
 			hwndButton[i] = CreateWindow(
-				TEXT("szChildClass"),
+				"szChildClass",
 				szButtonName[i].Name,
 				WS_CHILD | WS_VISIBLE | BS_OWNERDRAW,//BS_PUSHBUTTON
 				rectButton[i].left,
@@ -704,9 +735,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 				NULL);
 		}
 
+		//读取txt中的用户信息
 		{
 			FILE *file;
-			if (_tfopen_s(&file, szFilePath, TEXT("r,ccs=UNICODE")) == 0)//成功则为0
+			if (_tfopen_s(&file, szFilePath, "r,ccs=UNICODE") == 0)//成功则为0
 			{
 				fread(sHighScore, sizeof(sHighScore), 1, file);
 				fread(num, sizeof(num), 1, file);
@@ -728,10 +760,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		//BUG原因为窗口初始化时还没有建立hdc，而Fill0层层调用会画出主矩形，
 		//此时就画到窗口外面去了。在这里加了wantDraw参数后，初始化时不画矩形，至于初始块WM_PAINT中会画出的。
 		if (step == 0)
+		{
 			Fill0(hwnd, FALSE);
+		}
 		return 0;
 	}
-	case WM_PAINT:
+	case WM_PAINT://重绘界面
 	{
 		int i, j;
 		HDC hdc;
@@ -753,15 +787,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		hPen = CreatePen(PS_NULL, 0, 0);
 		SelectObject(hdc, hPen);//去掉画笔
 
-		DrawTextAdvance(hdc, TEXT("2048"), &rectName, 34, 0, crText, FontName, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+		DrawTextAdvance(hdc, "2048", &rectName, 34, 0, crText, FontName, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 		//画分数块
-		RoundRect(hdc, rectScore.left, rectScore.top, rectScore.right, rectScore.bottom, round, round);
+		RoundRect(hdc, rectScore.left, rectScore.top, rectScore.right, rectScore.bottom, Radis_c, Radis_c);
 
 		LoadString(hInst, IDS_STRING_SCORE, szScore, sizeof(szScore));
 		DrawTextAdvance(hdc, szScore, &rectScoreTitle, 12, 700, crScoreTitle, FontName, DT_CENTER | DT_SINGLELINE | DT_BOTTOM);
 		DrawTextAdvance(hdc, int2ptchar(score), &rectScoreNum, 24, 0, crWhite, FontName, DT_CENTER | DT_SINGLELINE | DT_TOP);
 		//画最高分块
-		RoundRect(hdc, rectBest.left, rectBest.top, rectBest.right, rectBest.bottom, round, round);
+		RoundRect(hdc, rectBest.left, rectBest.top, rectBest.right, rectBest.bottom, Radis_c, Radis_c);
 
 		LoadString(hInst, IDS_STRING_HIGHSCORE, szHighScore, sizeof(szHighScore));
 		DrawTextAdvance(hdc, szHighScore, &rectBestTitle, 12, 700, crScoreTitle, FontName, DT_CENTER | DT_SINGLELINE | DT_BOTTOM);
@@ -772,7 +806,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		DrawTextAdvance(hdc, szMemo1, &rectVCenterText, 13, 0, crText, FontName, DT_LEFT | DT_SINGLELINE | DT_VCENTER);
 		DrawTextAdvance(hdc, szMemo2, &rectBottomText, 13, 0, crText, FontName, DT_LEFT | DT_SINGLELINE | DT_VCENTER);
 		//主矩形
-		RoundRect(hdc, rectMain.left, rectMain.top, rectMain.right, rectMain.bottom, round, round);
+		RoundRect(hdc, rectMain.left, rectMain.top, rectMain.right, rectMain.bottom, Radis_c, Radis_c);
 
 		for (i = 0; i < 4; i++)
 		{
@@ -827,6 +861,20 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		return 0;
 	}
 	case WM_KEYDOWN:
+		if (cn % 2 == 1)
+		{
+			GetSystemTimeAsFileTime(&ft_1);
+			uli1.LowPart = ft_1.dwLowDateTime;
+			uli1.HighPart = ft_1.dwHighDateTime;
+			cn = cn < 9 ? cn++ : 3;
+		}
+		else
+		{
+			GetSystemTimeAsFileTime(&ft_2);
+			uli2.LowPart = ft_2.dwLowDateTime;
+			uli2.HighPart = ft_2.dwHighDateTime;
+			cn = cn < 9 ? cn++ : 3;
+		}
 		switch (wParam)
 		{
 		case VK_UP:
@@ -868,7 +916,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 					{
 						move = TRUE;
 						num[i][j] *= 2;
-						score += num[i][j];
+						if (cn == 1)
+							score += num[i][j];
+						else if (abs(uli2.QuadPart - uli1.QuadPart) / 10000 < 1000)
+							score = score + num[i][j] + 50;
+						else
+							score += num[i][j];
 						redo_score += num[i][j];
 						for (n = i + 1; n < 3; n++)//底方上移
 							num[n][j] = num[n + 1][j];
@@ -918,7 +971,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 					{
 						move = TRUE;
 						num[i][j] *= 2;
-						score += num[i][j];
+						if (cn == 1)
+							score += num[i][j];
+						else if (abs(uli2.QuadPart - uli1.QuadPart) / 10000 < 1000)
+							score = score + num[i][j] + 50;
+						else
+							score += num[i][j];
 						redo_score += num[i][j];
 						for (n = i - 1; n > 0; n--)//上方下移
 							num[n][j] = num[n - 1][j];
@@ -968,7 +1026,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 					{
 						move = TRUE;
 						num[i][j] *= 2;
-						score += num[i][j];
+						if (cn == 1)
+							score += num[i][j];
+						else if (abs(uli2.QuadPart - uli1.QuadPart) / 10000 < 1000)
+							score = score + num[i][j] + 50;
+						else
+							score += num[i][j];
 						redo_score += num[i][j];
 						for (n = j + 1; n < 3; n++)//向左移
 							num[i][n] = num[i][n + 1];
@@ -1018,7 +1081,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 					{
 						move = TRUE;
 						num[i][j] *= 2;
-						score += num[i][j];
+						if (cn == 1)
+							score += num[i][j];
+						else if (abs(uli2.QuadPart - uli1.QuadPart) / 10000 < 1000)
+							score = score + num[i][j] + 50;
+						else
+							score += num[i][j];
 						redo_score += num[i][j];
 						for (n = j - 1; n > 0; n--)//向右
 							num[i][n] = num[i][n - 1];
@@ -1074,7 +1142,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 void SaveGame()
 {
 	FILE *file;
-	if (_tfopen_s(&file, szFilePath, TEXT("w+,ccs=UNICODE")) == 0)//成功则为0
+	if (_tfopen_s(&file, szFilePath, "w+,ccs=UNICODE") == 0)//成功则为0
 	{
 		fwrite(sHighScore, sizeof(sHighScore), 1, file);
 		fwrite(num, sizeof(num), 1, file);
@@ -1098,7 +1166,7 @@ void SaveGame()
 		MessageBox(hwnd, szPromptText, szPrompt, 0);
 	}
 }
-
+//底部的按钮回调函数
 LRESULT CALLBACK ChildWndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
@@ -1213,7 +1281,7 @@ LRESULT CALLBACK ChildWndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPa
 		}
 		case README://说明
 			MessageBeep(0);
-			DialogBox(hInst, TEXT("IDD_ABOUT"), hwnd, AboutDlgProc);
+			DialogBox(hInst, "IDD_ABOUT", hwnd, AboutDlgProc);
 			break;
 		}
 		return 0;
@@ -1228,7 +1296,7 @@ LRESULT CALLBACK ChildWndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPa
 	}
 	return DefWindowProc(hwnd, message, wParam, lParam);
 }
-
+//关于按钮的回调函数
 BOOL CALLBACK AboutDlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
@@ -1257,7 +1325,7 @@ BOOL CALLBACK AboutDlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam
 	}
 	return FALSE;
 }
-
+//取名窗口的回调函数
 BOOL CALLBACK NameDlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
@@ -1275,13 +1343,13 @@ BOOL CALLBACK NameDlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 			if (lstrlen(szTemp) > 0)
 				FreshHighScore(szTemp);
 			else
-				FreshHighScore(TEXT("无名"));
+				FreshHighScore("无名");
 			EndDialog(hDlg, 0);
 			SendMessage(hwndButton[HIGHSCORE], WM_LBUTTONDOWN, 0, 0);
 			return TRUE;
 		}
 		case IDCANCEL:
-			FreshHighScore(TEXT("无名"));
+			FreshHighScore("无名");
 			EndDialog(hDlg, 0);
 			SendMessage(hwndButton[HIGHSCORE], WM_LBUTTONDOWN, 0, 0);
 			return TRUE;
